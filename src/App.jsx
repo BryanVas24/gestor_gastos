@@ -11,6 +11,7 @@ function App() {
   const [modal, setModal] = useState(false);
   const [animarmodal, setAnimarModal] = useState(false);
   const [gastos, setGastos] = useState(
+    
     localStorage.getItem("gastos")
       ? JSON.parse(localStorage.getItem("gastos"))
       : []
@@ -77,6 +78,7 @@ function App() {
   useEffect(() => {
     localStorage.setItem("gastos", JSON.stringify(gastos) ?? []);
   }, [gastos]);
+
   useEffect(() => {
     if (filtro) {
       const gastosFiltrados = gastos.filter(
